@@ -1,0 +1,10 @@
+.main {
+  height: 94vw;
+  width: 94vw;
+  border: 1px solid black;
+  max-width: 710px;
+  max-height: 710px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
