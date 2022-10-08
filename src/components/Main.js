@@ -3,6 +3,7 @@ import Row from "./Row";
 import "./Main.css";
 
 const Main = () => {
+  // Refactor this and come with solution for state of X and O
   const [isXPresent, setIsXPresent] = useState(false);
   let cellValue1 = isXPresent ? "O" : "X";
   let cellValue2 = isXPresent ? "O" : "X";
