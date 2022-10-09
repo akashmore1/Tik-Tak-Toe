@@ -1,37 +1,82 @@
 import React, { useState } from "react";
-import Row from "./Row";
+import Cell from "./Cell";
 import "./Main.css";
 
 const Main = () => {
-  // Refactor this and come with solution for state of X and O
+  const [gameArr, setGameArr] = useState(new Array(9).fill(""));
   const [isXPresent, setIsXPresent] = useState(false);
-  let cellValue1 = isXPresent ? "O" : "X";
-  let cellValue2 = isXPresent ? "O" : "X";
-  let cellValue3 = isXPresent ? "O" : "X";
 
   return (
     <div className="main">
-      <Row
-        setIsXPresent={setIsXPresent}
-        isXPresent={isXPresent}
-        cellValue1={cellValue1}
-        cellValue2={cellValue2}
-        cellValue3={cellValue3}
-      />
-      <Row
-        setIsXPresent={setIsXPresent}
-        isXPresent={isXPresent}
-        cellValue1={cellValue1}
-        cellValue2={cellValue2}
-        cellValue3={cellValue3}
-      />
-      <Row
-        setIsXPresent={setIsXPresent}
-        isXPresent={isXPresent}
-        cellValue1={cellValue1}
-        cellValue2={cellValue2}
-        cellValue3={cellValue3}
-      />
+      <div className="row">
+        <Cell
+          num={0}
+          setGameArr={setGameArr}
+          gameArr={gameArr}
+          isXPresent={isXPresent}
+          setIsXPresent={setIsXPresent}
+        ></Cell>
+        <Cell
+          num={1}
+          setGameArr={setGameArr}
+          gameArr={gameArr}
+          isXPresent={isXPresent}
+          setIsXPresent={setIsXPresent}
+        ></Cell>
+        <Cell
+          num={2}
+          setGameArr={setGameArr}
+          gameArr={gameArr}
+          isXPresent={isXPresent}
+          setIsXPresent={setIsXPresent}
+        ></Cell>
+      </div>
+      <div className="row">
+        <Cell
+          num={3}
+          setGameArr={setGameArr}
+          gameArr={gameArr}
+          isXPresent={isXPresent}
+          setIsXPresent={setIsXPresent}
+        ></Cell>
+        <Cell
+          num={4}
+          setGameArr={setGameArr}
+          gameArr={gameArr}
+          isXPresent={isXPresent}
+          setIsXPresent={setIsXPresent}
+        ></Cell>
+        <Cell
+          num={5}
+          setGameArr={setGameArr}
+          gameArr={gameArr}
+          isXPresent={isXPresent}
+          setIsXPresent={setIsXPresent}
+        ></Cell>
+      </div>
+      <div className="row">
+        <Cell
+          num={6}
+          setGameArr={setGameArr}
+          gameArr={gameArr}
+          isXPresent={isXPresent}
+          setIsXPresent={setIsXPresent}
+        ></Cell>
+        <Cell
+          num={7}
+          setGameArr={setGameArr}
+          gameArr={gameArr}
+          isXPresent={isXPresent}
+          setIsXPresent={setIsXPresent}
+        ></Cell>
+        <Cell
+          num={8}
+          setGameArr={setGameArr}
+          gameArr={gameArr}
+          isXPresent={isXPresent}
+          setIsXPresent={setIsXPresent}
+        ></Cell>
+      </div>
     </div>
   );
 };
