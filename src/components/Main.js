@@ -1,11 +1,55 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Cell from "./Cell";
 import "./Main.css";
 
-const Main = () => {
+const Main = ({ setWinnerText }) => {
   const [gameArr, setGameArr] = useState(new Array(9).fill(""));
   const [isXPresent, setIsXPresent] = useState(false);
+  const [winner, setWinner] = useState(null);
 
+  const row1 = [gameArr[0], gameArr[1], gameArr[2]];
+  const row2 = [gameArr[3], gameArr[4], gameArr[5]];
+  const row3 = [gameArr[6], gameArr[7], gameArr[8]];
+
+  const column1 = [gameArr[0], gameArr[3], gameArr[6]];
+  const column2 = [gameArr[1], gameArr[4], gameArr[7]];
+  const column3 = [gameArr[2], gameArr[5], gameArr[8]];
+
+  useEffect(() => {
+    const row1Set = [...new Set(row1)];
+    if (row1Set.length === 1 && row1Set[0] !== "") {
+      setWinner(row1Set[0]);
+    }
+
+    const row2Set = [...new Set(row2)];
+    if (row2Set.length === 1 && row2Set[0] !== "") {
+      setWinner(row2Set[0]);
+    }
+
+    const row3Set = [...new Set(row3)];
+    if (row3Set.length === 1 && row3Set[0] !== "") {
+      setWinner(row3Set[0]);
+    }
+
+    const column1Set = [...new Set(column1)];
+    if (column1Set.length === 1 && column1Set[0] !== "") {
+      setWinner(column1Set[0]);
+    }
+
+    const column2Set = [...new Set(column2)];
+    if (column2Set.length === 1 && column2Set[0] !== "") {
+      setWinner(column2Set[0]);
+    }
+
+    const column3Set = [...new Set(column3)];
+    if (column3Set.length === 1 && column3Set[0] !== "") {
+      setWinner(column3Set[0]);
+    }
+
+    setWinnerText(winner);
+  }, [gameArr, winner]);
+
+  console.log(winner);
   return (
     <div className="main">
       <div className="row">
@@ -15,6 +59,7 @@ const Main = () => {
           gameArr={gameArr}
           isXPresent={isXPresent}
           setIsXPresent={setIsXPresent}
+          winner={winner}
         ></Cell>
         <Cell
           num={1}
@@ -22,6 +67,7 @@ const Main = () => {
           gameArr={gameArr}
           isXPresent={isXPresent}
           setIsXPresent={setIsXPresent}
+          winner={winner}
         ></Cell>
         <Cell
           num={2}
@@ -29,6 +75,7 @@ const Main = () => {
           gameArr={gameArr}
           isXPresent={isXPresent}
           setIsXPresent={setIsXPresent}
+          winner={winner}
         ></Cell>
       </div>
       <div className="row">
@@ -38,6 +85,7 @@ const Main = () => {
           gameArr={gameArr}
           isXPresent={isXPresent}
           setIsXPresent={setIsXPresent}
+          winner={winner}
         ></Cell>
         <Cell
           num={4}
@@ -45,6 +93,7 @@ const Main = () => {
           gameArr={gameArr}
           isXPresent={isXPresent}
           setIsXPresent={setIsXPresent}
+          winner={winner}
         ></Cell>
         <Cell
           num={5}
@@ -52,6 +101,7 @@ const Main = () => {
           gameArr={gameArr}
           isXPresent={isXPresent}
           setIsXPresent={setIsXPresent}
+          winner={winner}
         ></Cell>
       </div>
       <div className="row">
@@ -61,6 +111,7 @@ const Main = () => {
           gameArr={gameArr}
           isXPresent={isXPresent}
           setIsXPresent={setIsXPresent}
+          winner={winner}
         ></Cell>
         <Cell
           num={7}
@@ -68,6 +119,7 @@ const Main = () => {
           gameArr={gameArr}
           isXPresent={isXPresent}
           setIsXPresent={setIsXPresent}
+          winner={winner}
         ></Cell>
         <Cell
           num={8}
@@ -75,6 +127,7 @@ const Main = () => {
           gameArr={gameArr}
           isXPresent={isXPresent}
           setIsXPresent={setIsXPresent}
+          winner={winner}
         ></Cell>
       </div>
     </div>
