@@ -8,21 +8,16 @@ function App() {
   const [isXPresent, setIsXPresent] = useState(false);
   const [winner, setWinner] = useState(null);
 
-  // No need for this state, remove it while refactoring
-  const [winnerText, setWinnerText] = useState("");
-
-  const classes = `result ${winnerText ? "" : "display"}`;
+  const classes = `result ${winner ? "" : "display"}`;
   const playAgainFunc = () => {
     setGameArr(new Array(9).fill(""));
     setIsXPresent(false);
     setWinner(null);
-    setWinnerText("");
   };
   return (
     <div className="main__wrapper">
       <h1>Tik Tac Toe</h1>
       <Main
-        setWinnerText={setWinnerText}
         gameArr={gameArr}
         setGameArr={setGameArr}
         isXPresent={isXPresent}
@@ -32,7 +27,7 @@ function App() {
       />
 
       <div className={classes}>
-        {winnerText} wins!
+        {winner} wins!
         <button
           onClick={() => {
             playAgainFunc();

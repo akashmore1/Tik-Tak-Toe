@@ -3,7 +3,6 @@ import Cell from "./Cell";
 import "./Main.css";
 
 const Main = ({
-  setWinnerText,
   gameArr,
   setGameArr,
   isXPresent,
@@ -62,8 +61,6 @@ const Main = ({
     if (diagonal2Set.length === 1 && diagonal2Set[0] !== "") {
       setWinner(diagonal2Set[0]);
     }
-
-    setWinnerText(winner);
   }, [gameArr, winner]);
 
   return (
