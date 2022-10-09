@@ -5,5 +5,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 6rem;
+  font-size: 2rem;
+}
+
+@media (min-width: 470px) {
+  .cell {
+    font-size: 6rem;
+  }
 }

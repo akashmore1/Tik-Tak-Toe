@@ -6,15 +6,15 @@ import "./App.css";
 function App() {
   const [winnerText, setWinnerText] = useState("");
   console.log("winnerText", winnerText);
+  const classes = `result ${winnerText ? "" : "display"}`;
   return (
     <div className="main__wrapper">
       <h1>Tik Tac Toe</h1>
       <Main setWinnerText={setWinnerText} />
-      {winnerText && (
-        <div>
-          {winnerText} wins! <button>Play again?</button>
-        </div>
-      )}
+
+      <div className={classes}>
+        {winnerText} wins! <button>Play again?</button>
+      </div>
     </div>
   );
 }

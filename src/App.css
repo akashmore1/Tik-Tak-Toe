@@ -5,8 +5,50 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
+  padding: 1rem;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
+}
+
+.result {
+  font-size: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.display {
+  visibility: hidden;
+}
+
+button {
+  width: 80vw;
+  font-size: 2rem;
+  padding: 7px;
+  max-width: 20rem;
+}
+
+@media (min-width: 470px) {
+  button {
+    font-size: 3rem;
+  }
+
+  .result {
+    font-size: 3rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .result {
+    flex-direction: row;
+  }
 }
