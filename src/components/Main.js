@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import Cell from "./Cell";
 import "./Main.css";
 
-const Main = ({ setWinnerText }) => {
-  const [gameArr, setGameArr] = useState(new Array(9).fill(""));
-  const [isXPresent, setIsXPresent] = useState(false);
-  const [winner, setWinner] = useState(null);
-
+const Main = ({
+  setWinnerText,
+  gameArr,
+  setGameArr,
+  isXPresent,
+  setIsXPresent,
+  winner,
+  setWinner,
+}) => {
   const row1 = [gameArr[0], gameArr[1], gameArr[2]];
   const row2 = [gameArr[3], gameArr[4], gameArr[5]];
   const row3 = [gameArr[6], gameArr[7], gameArr[8]];
@@ -14,6 +18,9 @@ const Main = ({ setWinnerText }) => {
   const column1 = [gameArr[0], gameArr[3], gameArr[6]];
   const column2 = [gameArr[1], gameArr[4], gameArr[7]];
   const column3 = [gameArr[2], gameArr[5], gameArr[8]];
+
+  const diagonal1 = [gameArr[0], gameArr[4], gameArr[8]];
+  const diagonal2 = [gameArr[2], gameArr[4], gameArr[6]];
 
   useEffect(() => {
     const row1Set = [...new Set(row1)];
@@ -46,10 +53,19 @@ const Main = ({ setWinnerText }) => {
       setWinner(column3Set[0]);
     }
 
+    const diagonal1Set = [...new Set(diagonal1)];
+    if (diagonal1Set.length === 1 && diagonal1Set[0] !== "") {
+      setWinner(diagonal1Set[0]);
+    }
+
+    const diagonal2Set = [...new Set(diagonal2)];
+    if (diagonal2Set.length === 1 && diagonal2Set[0] !== "") {
+      setWinner(diagonal2Set[0]);
+    }
+
     setWinnerText(winner);
   }, [gameArr, winner]);
 
-  console.log(winner);
   return (
     <div className="main">
       <div className="row">
