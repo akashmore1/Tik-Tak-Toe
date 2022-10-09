@@ -8,7 +8,9 @@ function App() {
   const [isXPresent, setIsXPresent] = useState(false);
   const [winner, setWinner] = useState(null);
 
-  const classes = `result ${winner ? "" : "display"}`;
+  const gameArrSet = new Set(gameArr);
+
+  const classes = `result ${winner || !gameArrSet.has("") ? "" : "display"}`;
   const playAgainFunc = () => {
     setGameArr(new Array(9).fill(""));
     setIsXPresent(false);
@@ -27,7 +29,7 @@ function App() {
       />
 
       <div className={classes}>
-        {winner} wins!
+        {gameArrSet.has("") && <p>{winner} wins!</p>}
         <button
           onClick={() => {
             playAgainFunc();
