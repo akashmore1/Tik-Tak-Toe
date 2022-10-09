@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Cell.css";
 
 const Cell = ({
@@ -8,7 +8,20 @@ const Cell = ({
   isXPresent,
   setIsXPresent,
   winner,
+  winnerCollection,
 }) => {
+  const [isClassAdded, setIsClassAdded] = useState(false);
+
+  useEffect(() => {
+    setIsClassAdded(winnerCollection.includes(num));
+  }, [winnerCollection]);
+
+  useEffect(() => {
+    return () => {
+      setIsClassAdded(false);
+    };
+  });
+
   const onCellClick = () => {
     if (winner) return;
     const tempGameArray = [...gameArr];
@@ -17,8 +30,9 @@ const Cell = ({
     setIsXPresent(!isXPresent);
   };
 
+  const classes = `${isClassAdded ? "cell red" : "cell"}`;
   return (
-    <div className="cell" onClick={onCellClick}>
+    <div className={classes} onClick={onCellClick}>
       {gameArr[num]}
     </div>
   );

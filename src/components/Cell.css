@@ -8,6 +8,11 @@
   font-size: 2rem;
 }
 
+.red {
+  color: red;
+  background-color: antiquewhite;
+}
+
 @media (min-width: 470px) {
   .cell {
     font-size: 6rem;
