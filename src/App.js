@@ -29,7 +29,7 @@ function App() {
       />
 
       <div className={classes}>
-        {gameArrSet.has("") && <p>{winner} wins!</p>}
+        {gameArrSet.has("") && <p className="winner__text">{winner} wins!</p>}
         <button
           onClick={() => {
             playAgainFunc();

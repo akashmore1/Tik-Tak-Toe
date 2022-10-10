@@ -11,15 +11,22 @@
 
 h1 {
   font-size: 2rem;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .result {
   font-size: 2rem;
+  font-family: "Courier New", Courier, monospace;
   display: flex;
   gap: 1rem;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.winner__text {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
 }
 
 .display {
@@ -31,6 +38,8 @@ button {
   font-size: 2rem;
   padding: 7px;
   max-width: 20rem;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
 }
 
 @media (min-width: 470px) {
