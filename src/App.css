@@ -40,6 +40,7 @@ button {
   max-width: 20rem;
   font-family: "Courier New", Courier, monospace;
   font-weight: bolder;
+  border-radius: 7px;
 }
 
 @media (min-width: 470px) {
