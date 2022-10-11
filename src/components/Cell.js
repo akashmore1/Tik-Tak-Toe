@@ -24,6 +24,7 @@ const Cell = ({
 
   const onCellClick = () => {
     if (winner) return;
+    if (gameArr[num] !== "") return;
     const tempGameArray = [...gameArr];
     tempGameArray[num] = isXPresent ? "O" : "X";
     setGameArr(tempGameArray);
